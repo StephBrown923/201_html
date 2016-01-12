@@ -1,0 +1,55 @@
+body {
+        background-color:rgb(106,128,160);
+}
+#profile_info {
+        max-width:2000px;
+        margin:0 auto;
+        height:330px;
+        position:relative;
+        top:50px;
+        font-family:'Century-Gothic', sans-serif;
+        background-color:rgb(70,64,64);
+}
+#name {
+        position:absolute;
+        top:0px;
+        left:215px;
+        font-size:35pt;
+        color:white;
+}
+#occupation {
+        position:absolute;
+        top:54px;
+        left:275px;
+        font-size:19pt;
+        color:rgb(255,0,127);
+}
+#organization {
+        position:absolute;
+        top:88px;
+        left:275px;
+        font-size:15pt;
+        color:rgb(255,0,127);
+}
+#profile_photo {
+        top:75px;
+        left:42px;
+}
+#connect {
+        position:absolute;
+        top:250px;
+        right:43px;
+        font-size:17pt;
+        color:rgb(15,15,51);
+}
+
+.column_left {
+        left:3%;
+        float:left;
+        width:45%;
+}
+#employment_info {
+        max-width:2000px;
+        margin:0 auto;
+        height:450px;
+        position:relative;
