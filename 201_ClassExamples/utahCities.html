@@ -1,0 +1,35 @@
+<html>
+<body>
+<h1>Utah Cities</h1>
+<p> Enter a city: </p>
+<input type= "text" id= "box" onekeyup="showHints(this.value)">
+<br>
+<p> Suggestions </>
+<p id= "suggestions"></p>
+<script>
+var cities = [
+"Alpine",
+"Altamont",
+"Alton",
+"Altonah",
+"American Fork",
+"Brigham City",
+"Pleasant View",
+"Provo",
+"St. George"
+];
+function showHints(str)
+{
+	var list="<ul>";
+	for(i=0; i < cities.length; i++) {
+		if(cities[i].indexOf(str) === 0) {
+		  list += "<li>"+cities[i]+"</li>";
+		}
+	}
+	list+= "</ul>";
+	console.log(list);
+	document.getElementById("suggestions".innerHTML = list);
+}
+</script>
+</body>
+</html>
