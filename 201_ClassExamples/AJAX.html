@@ -2,6 +2,8 @@
 <head>
 
 <title>City Finder</title>
+<link rel= "stylesheet" type= "text/css" href= "weather.css">
+
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <script>
@@ -51,18 +53,20 @@ var URL= "https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#ci
 
 </head>
 <body>
+<div id= "titleDIV">
 <h1 id= "header">Weather Check</h1>
+</div>
 <h3 id= "slogan">Check the weather in your town, minute-by-minute!</h3>
 
 <form>
 Enter A Utah City: <input type="text" id="cityfield" value=""><br>
-Suggestion: <span id="txtHint">Empty</span>
+Suggestion: <span id="txtHint"></span>
 <input id="button" type="submit" value="Submit">
 </form>
-<p>City</p>
+<h4>City</h4>
 <textarea id="dispcity">No City</textarea>
-<p>Current Weather</p>
-<div id="weather">No weather</div>
+<p>Current Weather:</p>
+<div id="weather">No city currently selected</div>
 
 </body>
 </h://api.wunderground.com/api/d8483e016960a875/geolookup/conditions/q/Utah/atml>
