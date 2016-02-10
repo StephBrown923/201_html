@@ -1,0 +1,34 @@
+body {
+  background: url("https://musingsoncountryliving.files.wordpress.com/2014/02/watercolor-horses.jpg")no-repeat center center fixed;
+  background-size: cover;
+}
+#trans {
+  background-color: rgba(252,206,252,0.6);
+  width:65%;
+  min-height:100%;
+  border-radius:25px;
+  margin:auto;
+  margin-top:65px;
+}
+.Heading {
+  text-align:center;
+}
+
+.User-list {
+  list-style: none;
+}
+
+.Avatar {
+  text-align: center;  
+}
+
+.Avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+}
+
+.Avatar h4 {
+  text-transform: capitalize;
+  color: navy;
+}
