@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<title>City Finder</title>
+<link rel= "stylesheet" type= "text/css" href= "weather.css">
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+$(document).ready(function() {
+$( "#cityfield" ).keyup(function() {
+var URL= "https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#cityfield").val();
+  $.getJSON(URL,function(data) {
+    var everything;
+ 	 everything = "<ul>";
+ 	 $.each(data, function(i,item) {
+   	 everything += "<li> "+data[i].city;
+ 	 });
+    
+ 	 everything += "</ul>";
+  	$("#txtHint").html(everything);
+  });
+  $("txtHint").text("Keyup "+$("#cityfield").val());
+  $("#button").click(function(e){
+ 	 var value = $("#cityfield").val();
+ 	 console.log(value);
+   	 e.preventDefault();
+ 	 $("#dispcity").text(value);
+  
+    var myurl= "https://api.wunderground.com/api/d8483e016960a875/geolookup/conditions/q/Utah/";
+  myurl += value;
+  myurl += ".json";
+  console.log(myurl);
+  $.ajax({
+    url : myurl,
+    dataType : "jsonp",
+    success : function(parsed_json) {
+      var location = parsed_json['location']['city'];
+      var temp_string = parsed_json['current_observation']['temperature_string'];
+      var current_weather = parsed_json['current_observation']['weather'];
+      everything = "<ul>";
+      everything += "<li>Location: "+location;
+      everything += "<li>Temperature: "+temp_string;
+      everything += "<li>Weather: "+current_weather;
+      everything += "</ul>";
+      $("#weather").html(everything);
+    }
+  });
+});
+});
+});
+</script>
+
+</head>
+<body>
+<div id= "titleDIV">
+<h1 id= "header">Weather Check</h1>
+</div>
+<h3 id= "slogan">Check the weather in your town, minute-by-minute!</h3>
+
+<form>
+Enter A Utah City: <input type="text" id="cityfield" value=""><br>
+Suggestion: <span id="txtHint"></span>
+<input id="button" type="submit" value="Submit">
+</form>
+<h4>City</h4>
+<textarea id="dispcity">No City</textarea>
+<p>Current Weather:</p>
+<div id="weather">No city currently selected</div>
+
+</body>
+</h://api.wunderground.com/api/d8483e016960a875/geolookup/conditions/q/Utah/atml>
